@@ -6,6 +6,7 @@ int main()
 {
 	Algos a;
 	int someNumbers[10] = { 10, 15, 12, 18, 6, 2, 1, -20, 0, 100 };
+	int sortedNumbers[10] = { 10, 20, 30, 40, 50, 60, 70, 80, 90, 100 };
 	int userNum = -1;
 	int answer = -1;
 
@@ -13,7 +14,10 @@ int main()
 	cin >> userNum;
 
 
-	answer = a.linearSearch(userNum, someNumbers, 10);
+	//answer = a.linearSearch(userNum, someNumbers, 10);
+	//cout << userNum << " found at index " << answer << endl;
+
+	answer = a.binarySearch(userNum, sortedNumbers, 0, 9);
 	cout << userNum << " found at index " << answer << endl;
 
 	return 0;
