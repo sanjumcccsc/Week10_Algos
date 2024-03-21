@@ -14,6 +14,24 @@ void Algos::swap(int& n1, int& n2)
     n2 = temp;
 }
 
+void Algos::swapChars(char& n1, char& n2)
+{
+    char temp = ' ';
+
+    temp = n1;
+    n1 = n2;
+    n2 = temp;
+}
+
+void Algos::swapStrings(string& n1, string& n2)
+{
+    string temp = "";
+
+    temp = n1;
+    n1 = n2;
+    n2 = temp;
+}
+
 int Algos::linearSearch(int key, int* myNums, int sizeOfArray)
 {
     for (int i = 0; i < sizeOfArray; i++)
@@ -53,6 +71,48 @@ int Algos::binarySearch(int key, int* myNums, int min, int max)
 }
 
 void Algos::bubbleSort(int* A, int n)
+{
+    bool flag = false;
+    for (int k = 1; k < n; k++)
+    {
+        flag = false;
+        for (int i = 0; i < n - k; i++)
+        {
+            if (A[i] > A[i + 1])
+            {
+                swap(A[i], A[i + 1]);
+                flag = true;
+            }
+        }
+        if (!flag) // didn't do any swapping
+        {
+            break;
+        }
+    }
+}
+
+void Algos::bubbleSortChars(char* A, int n)
+{
+    bool flag = false;
+    for (int k = 1; k < n; k++)
+    {
+        flag = false;
+        for (int i = 0; i < n - k; i++)
+        {
+            if (A[i] > A[i + 1])
+            {
+                swap(A[i], A[i + 1]);
+                flag = true;
+            }
+        }
+        if (!flag) // didn't do any swapping
+        {
+            break;
+        }
+    }
+}
+
+void Algos::bubbleSortStrings(string* A, int n)
 {
     bool flag = false;
     for (int k = 1; k < n; k++)
