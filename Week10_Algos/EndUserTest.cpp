@@ -17,8 +17,23 @@ int main()
 	//answer = a.linearSearch(userNum, someNumbers, 10);
 	//cout << userNum << " found at index " << answer << endl;
 
-	answer = a.binarySearch(userNum, sortedNumbers, 0, 9);
-	cout << userNum << " found at index " << answer << endl;
+	/*answer = a.binarySearch(userNum, sortedNumbers, 0, 9);
+	cout << userNum << " found at index " << answer << endl;*/
 
+	cout << "Array before sorting: \n";
+	for (int i = 0; i < 10; i++)
+	{
+		cout << someNumbers[i] << " ";
+	}
+	cout << endl;
+
+	a.bubbleSort(someNumbers, 10);
+
+	cout << "Array after sorting: \n";
+	for (int i = 0; i < 10; i++)
+	{
+		cout << someNumbers[i] << " ";
+	}
+	cout << endl;
 	return 0;
 }

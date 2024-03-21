@@ -5,6 +5,15 @@ int Algos::findMidPoint(int min, int max)
     return (min+max)/2;
 }
 
+void Algos::swap(int& n1, int& n2)
+{
+    int temp = -1;
+    
+    temp = n1;
+    n1 = n2;
+    n2 = temp;
+}
+
 int Algos::linearSearch(int key, int* myNums, int sizeOfArray)
 {
     for (int i = 0; i < sizeOfArray; i++)
@@ -40,5 +49,26 @@ int Algos::binarySearch(int key, int* myNums, int min, int max)
     else
     {
         return midpoint;
+    }
+}
+
+void Algos::bubbleSort(int* A, int n)
+{
+    bool flag = false;
+    for (int k = 1; k < n; k++)
+    {
+        flag = false;
+        for (int i = 0; i < n - k; i++)
+        {
+            if (A[i] > A[i + 1])
+            {
+                swap(A[i], A[i + 1]);
+                flag = true;
+            }
+        }
+        if (!flag) // didn't do any swapping
+        {
+            break;
+        }
     }
 }
