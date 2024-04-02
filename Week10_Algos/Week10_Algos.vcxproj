@@ -133,6 +133,10 @@
     <ClCompile Include="Algos.cpp" />
     <ClCompile Include="EndUserTest.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="myData.txt" />
+    <Text Include="myData1.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

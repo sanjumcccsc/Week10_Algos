@@ -91,44 +91,84 @@ void Algos::bubbleSort(int* A, int n)
     }
 }
 
-void Algos::bubbleSortChars(char* A, int n)
+//void Algos::bubbleSortChars(char* A, int n)
+//{
+//    bool flag = false;
+//    for (int k = 1; k < n; k++)
+//    {
+//        flag = false;
+//        for (int i = 0; i < n - k; i++)
+//        {
+//            if (A[i] > A[i + 1])
+//            {
+//                swap(A[i], A[i + 1]);
+//                flag = true;
+//            }
+//        }
+//        if (!flag) // didn't do any swapping
+//        {
+//            break;
+//        }
+//    }
+//}
+//
+//void Algos::bubbleSortStrings(string* A, int n)
+//{
+//    bool flag = false;
+//    for (int k = 1; k < n; k++)
+//    {
+//        flag = false;
+//        for (int i = 0; i < n - k; i++)
+//        {
+//            if (A[i] > A[i + 1])
+//            {
+//                swap(A[i], A[i + 1]);
+//                flag = true;
+//            }
+//        }
+//        if (!flag) // didn't do any swapping
+//        {
+//            break;
+//        }
+//    }
+//}
+
+void Algos::selectionSort(int* A, int n)
 {
-    bool flag = false;
-    for (int k = 1; k < n; k++)
+    int min = -1;
+    for (int i = 0; i < n-1; i++)
     {
-        flag = false;
-        for (int i = 0; i < n - k; i++)
+        min = i;
+        for (int j = i + 1; j < n; j++)
         {
-            if (A[i] > A[i + 1])
+            if (A[j] < A[min])
             {
-                swap(A[i], A[i + 1]);
-                flag = true;
+                min = j;
             }
         }
-        if (!flag) // didn't do any swapping
+        if (min != i)
         {
-            break;
+            swap(A[min], A[i]);
         }
     }
 }
 
-void Algos::bubbleSortStrings(string* A, int n)
+void Algos::selectionSortPointer(int* A, int n)
 {
-    bool flag = false;
-    for (int k = 1; k < n; k++)
+    int min = -1;
+    for (int i = 0; i < n - 1; i++)
     {
-        flag = false;
-        for (int i = 0; i < n - k; i++)
+        min = i;
+        for (int j = i + 1; j < n; j++)
         {
-            if (A[i] > A[i + 1])
+            if (*(A+j) < *(A+min))
             {
-                swap(A[i], A[i + 1]);
-                flag = true;
+                min = j;
             }
         }
-        if (!flag) // didn't do any swapping
+        if (min != i)
         {
-            break;
+            swap(*(A+min), *(A+i));
         }
     }
 }
